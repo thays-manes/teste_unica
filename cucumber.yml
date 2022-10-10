@@ -1,0 +1,11 @@
+default: -p pretty -p ci -p html_report -p json_report -p allure -p chrome
+
+chrome: BROWSER=chrome
+firefox: BROWSER=firefox
+chrome-headless: BROWSER=chrome-headless
+firefox-headless: BROWSER=firefox-headless
+pretty: --format pretty
+ci: --format progress
+html_report: --format html --out=logs/report.html
+json_report: --format json --out=logs/report.json
+allure: --format pretty --publish-quiet --color --format AllureCucumber::CucumberFormatter --out relatorios/allure-results
